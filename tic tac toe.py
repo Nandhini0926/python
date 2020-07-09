@@ -16,23 +16,20 @@ def game():
 for i in range(10):
         printBoard(theBoard)
         print("It's your turn," + turn + ".Move to which place?")
-
-        move = input()        
-
-       if theBoard[move] == ' ':
+       move = input()        
+if theBoard[move] == ' ':
             theBoard[move] = turn
             count += 1
         else:
             print("That place is already filled.\nMove to which place?")
             continue
-
-        if count >= 5:
-            if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ': 
+ if count >= 5:
+ if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ': 
                 printBoard(theBoard)
                 print("\nGame Over.\n")                
                 print(" **** " +turn + " won. ****")                
                 break
-            elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':
+ elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':
                 printBoard(theBoard)
                 print("\nGame Over.\n")                
                 print(" **** " +turn + " won. ****")
@@ -67,24 +64,17 @@ for i in range(10):
                 print("\nGame Over.\n")                
                 print(" **** " +turn + " won. ****")
                 break 
-
-         if count == 9:
+if count == 9:
             print("\nGame Over.\n")                
             print("It's a Tie!!")
-
-       
-        if turn =='X':
+if turn =='X':
             turn = 'O'
         else:
             turn = 'X'        
-    
-    
-    restart = input("Do want to play Again?(y/n)")
+            restart = input("Do want to play Again?(y/n)")
     if restart == "y" or restart == "Y":  
         for key in board_keys:
             theBoard[key] = " "
-
-        game()
-
+           game()
 if __name__ == "__main__":
     game()

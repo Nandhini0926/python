@@ -1,15 +1,12 @@
 import pygame
 import time
 import random
- 
 pygame.init()
- 
 white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
 blue = (0, 0, 255)
- 
-dis_width = 800
+ dis_width = 800
 dis_height = 600
  
 dis = pygame.display.set_mode((dis_width, dis_height))
@@ -21,14 +18,10 @@ snake_block = 10
 snake_speed = 30
  
 font_style = pygame.font.SysFont(None, 30)
- 
- 
-def message(msg, color):
+ def message(msg, color):
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [dis_width/3, dis_height/3])
- 
- 
-def gameLoop():  # creating a function
+ def gameLoop():  # creating a function
     game_over = False
     game_close = False
  
